@@ -136,7 +136,7 @@ class CalcGUI(QMainWindow):
             None
         """
         #Only perform calculation if an operation has begun
-        if self.dataCache and self.operation:
+        if self.operation:
             currentData = self.outputLabel.text()
             try:
                 #Try to convert the data currently in the display to a numerical value
@@ -147,7 +147,11 @@ class CalcGUI(QMainWindow):
 
                 #Perform calculation
                 op = ops[self.operation]
-                res = op(self.dataCache, cdVal)
+                res = round(op(self.dataCache, cdVal), 10)
+
+                #Convert to an int if possible
+                if res % 1 == 0:
+                    res = int(res)
 
                 #Display the result to the calculater screen
                 self.outputLabel.setText(str(res))

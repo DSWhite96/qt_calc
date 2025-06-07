@@ -254,7 +254,7 @@
      <string>.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="plusButton">
+   <widget class="QPushButton" name="addButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -311,7 +311,7 @@
      <string>C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_18">
+   <widget class="QPushButton" name="delButton">
     <property name="geometry">
      <rect>
       <x>10</x>

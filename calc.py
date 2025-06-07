@@ -114,7 +114,7 @@ class CalcGUI(QMainWindow):
         #Try converting the data to a numerical value
         try:
             self.dataCache = float(data)
-
+            self.operation = op
             #Check if the user is entering a negative number
             if data == 0 and op == "-":
                 self.outputLabel.setText(op)

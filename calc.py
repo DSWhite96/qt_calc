@@ -62,7 +62,7 @@ class CalcGUI(QMainWindow):
             self.outputLabel.setText("0.")
         #If the value is zero, simply display the new input
         elif currentData == "0":
-            self.outputLabel.setText(val) 
+            self.outputLabel.setText(val)
         else:
             #Otherwise, add the new input to the previously existing data
             self.outputLabel.setText(currentData + val)
@@ -115,11 +115,17 @@ class CalcGUI(QMainWindow):
         try:
             self.dataCache = float(data)
 
-            #If conversion is successful, update current operation
-            self.operation = op
+            #Check if the user is entering a negative number
+            if data == 0 and op == "-":
+                self.outputLabel.setText(op)
 
-            #Reset input string
-            self.outputLabel.setText("0")
+            #Otherwise, set up operation
+            else:
+                #If conversion is successful, update current operation
+                self.operation = op
+
+                #Reset input string
+                self.outputLabel.setText("0")
 
         except ValueError:
             #If that fails, reset values and return an error
